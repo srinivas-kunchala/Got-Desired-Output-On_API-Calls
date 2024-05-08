@@ -301,7 +301,7 @@ app.put("/todos/:todoId/", async (request, response) => {
       due_date = '${dueDate}'
       where id = ${todoId}
       `;
-  const a = await db.run(updateQuery);
+  await db.run(updateQuery);
   response.send(`${updateText} Updated`);
 });
 
